@@ -3,6 +3,7 @@
 import {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
+import { toast } from 'react-toastify';
 
 import { URLS } from '../constants/url';
 import { ResponseData } from '../types/response';
@@ -28,13 +29,14 @@ export function useGetAllData(): UseGatAllData {
   const getAllData = useCallback(async () => {
     Promise.all(promises)
       .then((data) => {
-        setLoading(false);
+        toast('All data fetched');
         setSelections({
           services: data[0],
           brands: data[1],
         });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => toast(`Error: ${err.message}`))
+      .finally(() => setLoading(false));
   }, [promises]);
 
   useEffect(() => {

@@ -2,7 +2,9 @@
 
 ## Steps to run:
 
-1. git clone https://github.com/Bjorgar/select-to-url.git
+1. ```
+    git clone https://github.com/Bjorgar/select-to-url.git
+   ```
 
 2. npm i
 
