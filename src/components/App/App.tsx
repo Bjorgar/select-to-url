@@ -1,33 +1,20 @@
-import { ToastContainer } from 'react-toastify';
-import Box from '@mui/material/Box';
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { useGetAllData } from '../../hooks/useGetAllData';
-import BrandSelect from '../BrandSelect/BrandSelect';
-import Loader from '../Loader';
-import ServiceSelect from '../ServiceSelect/ServiceSelect';
+import Navigation from '../Navigation';
 
-import 'react-toastify/dist/ReactToastify.css';
+const FormPage = lazy(() => import('@src/pages/FormPage'));
+const UrlTestPage = lazy(() => import('@src/pages/UrlTestPage'));
 
 export default function App(): JSX.Element {
-  const { isLoading, selections } = useGetAllData();
   return (
-    <>
-      <ToastContainer />
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 2,
-      }}
-      >
-        { isLoading && <Loader /> }
-        { selections && (
-          <>
-            <BrandSelect list={selections.brands} />
-            <ServiceSelect list={selections.services} />
-          </>
-        )}
-      </Box>
-    </>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Navigation />} />
+        <Route path="form-page" element={<FormPage />} />
+        <Route path="query-page" element={<UrlTestPage />} />
+      </Routes>
+    </Suspense>
+
   );
 }

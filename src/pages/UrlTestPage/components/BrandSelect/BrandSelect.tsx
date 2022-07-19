@@ -1,5 +1,5 @@
 import { useQueryParams } from '../../hooks/useQueryParams';
-import SelectCommon from '../SelectCommon/SelectCommon';
+import SelectCommon from '../SelectCommon';
 import { QUERY_KEY, SELECT_LIST_NAME } from './constants';
 import { BrandSelectProps } from './types';
 

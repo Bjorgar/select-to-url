@@ -1,0 +1,21 @@
+._1pclcky0 {
+  margin-top: 158px;
+  margin-bottom: 123px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+._1pclcky1 {
+  font-family: var(--obpawu1);
+  font-size: 48px;
+  color: var(--obpawu6);
+  margin-bottom: 25px;
+  margin-top: 0;
+  text-align: center;
+  line-height: 1.01em;
+}
+._1pclcky2 {
+  display: inline-block;
+  transition-duration: 0.3s;
+  margin-left: 20px;
+}

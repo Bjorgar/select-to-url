@@ -33,7 +33,12 @@ export default function SelectCommon({
         </MenuItem>
         {
           list.map(({ label }) => (
-            <MenuItem value={label}>{label}</MenuItem>
+            <MenuItem
+              value={label}
+              key={label}
+            >
+              {label}
+            </MenuItem>
           ))
         }
       </Select>
